@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentines</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, rgb(194, 12, 12), pink);
+      font-family: Georgia, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      width: 400px;
+      padding: 30px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .card h1 {
+      color: rgb(247, 9, 56);
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #4f0e0e;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: hsl(350, 100%, 50%);
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: rgb(110, 9, 9);
+      transform: scale(1.05);
+    }
+
+    .flower {
+      position: absolute;
+      font-size: 30px;
+      animation: float 4s infinite ease-in-out;
+    }
+
+    .flower1 { top: -20px; left: -20px; }
+    .flower2 { top: -20px; right: -20px; }
+    .flower3 { bottom: -20px; left: -20px; }
+    .flower4 { bottom: -20px; right: -20px; }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: rgb(220, 5, 5);
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 320px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="flower flower1">🌸</span>
+    <span class="flower flower2">🌹</span>
+    <span class="flower flower3">🌷</span>
+    <span class="flower flower4">💐</span>
+
+    <h1>Happy Valentine’s Day ❤️</h1>
+    <p>FOR YOU MY LOVE!</p>
+    <button onclick="showPopup()">Open Message</button>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>💌</h2>
+      <p>HAPPY VALENTINES MY LOVE,IM HAPPY TO BE WITH YOU!,ILOVE YOU LOVE</p>
+      <button onclick="hidePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function hidePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
